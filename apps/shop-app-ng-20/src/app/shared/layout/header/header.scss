@@ -1,0 +1,30 @@
+.page-header {
+  &__nav {
+    flex-grow: 1;
+    display: none;
+  }
+
+  &__title {
+    color: #2B7CD3;
+    flex-grow: 1;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    &__nav {
+      display: block;
+
+      &--mobile {
+        display: none;
+      }
+    }
+
+    &__title {
+      flex-grow: initial;
+    }
+  }
+}

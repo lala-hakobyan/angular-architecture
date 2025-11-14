@@ -1,0 +1,10 @@
+@if (cartItem()) {
+  <li class="cart-item">
+    <h3>{{cartItem()?.cart?.name}}</h3>
+    <p>{{cartItem()?.cart?.description}}</p>
+    <p>
+      <span>Quantity:</span><span>{{cartItem()?.quantity}}</span>
+    </p>
+    <button class="cart-item__remove" (click)="removeItem()">Remove Item</button>
+  </li>
+}

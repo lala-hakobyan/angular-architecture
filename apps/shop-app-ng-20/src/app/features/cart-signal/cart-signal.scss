@@ -1,0 +1,8 @@
+.signal-cart-header {
+  display: flex;
+  align-items: center;
+
+  &__title {
+    flex-grow: 1
+  }
+}

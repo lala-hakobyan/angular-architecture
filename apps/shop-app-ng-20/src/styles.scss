@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+// The width and height include the content and padding, but not the border.
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+}
+
+a {
+  color: #2B7CD3;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #1E5FA8;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #163E73;
+}
+
+a:visited {
+  color: #2565B2;
+}

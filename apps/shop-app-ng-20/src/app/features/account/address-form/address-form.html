@@ -1,0 +1,63 @@
+<div class="address-form">
+  <h3 class="address-form__title">Add a New Address</h3>
+  <form [formGroup]="addressForm">
+    <div class="address-form__group">
+      <label class="address-form__label" for="country">Country</label>
+      <select class="address-form__control"
+              [class.address-form__control--error]="isError('country')"
+              id="country"
+              formControlName="country">
+        @if (addressForm.get('country')?.value===-1) {
+          <option value="-1" selected="selected">{{ countryDefaultValue }}</option>
+        }
+        @for (item of countries; track item.id){
+          <option [label]="item.name" [value]="item.id"></option>
+        }
+      </select>
+      @if(isError('country')) {
+        <p class="address-form__control-error">{{ errorMessages.required }}</p>
+      }
+    </div>
+
+    <div class="address-form__group">
+      <label class="address-form__label" for="fullName">Full Name</label>
+      <input class="address-form__control"
+             [class.address-form__control--error]="isError('fullName')"
+             id="fullName"
+             type="text"
+             formControlName="fullName"/>
+      @if(isError('fullName')) {
+        <p class="address-form__control-error">{{ errorMessages.required }}</p>
+      }
+    </div>
+
+    <div class="address-form__group">
+      <label class="address-form__label" for="phoneNumber">Phone Number</label>
+      <input class="address-form__control"
+             [class.address-form__control--error]="isError('phoneNumber')"
+             id="phoneNumber"
+             type="text"
+             formControlName="phoneNumber" />
+      @if(isError('phoneNumber')) {
+        <p class="address-form__control-error">{{ errorMessages.required }}</p>
+      }
+    </div>
+
+    <div class="address-form__group">
+      <label class="address-form__label" for="address">Address</label>
+      <input class="address-form__control"
+             [class.address-form__control--error]="isError('address')"
+             id="address"
+             type="text"
+             formControlName="address" />
+      @if(isError('address')) {
+        <p class="address-form__control-error">{{ errorMessages.required }}</p>
+      }
+    </div>
+
+    <div class="address-form__group">
+      <button type="button" class="address-form__button" (click)="submitForm()" [disabled]="!addressForm.valid">Add Address</button>
+    </div>
+  </form>
+</div>
+

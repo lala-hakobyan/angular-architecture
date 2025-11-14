@@ -1,0 +1,28 @@
+.cart-basket {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &__icon {
+    width: 40px;
+  }
+
+  &__text {
+    display: inline-block;
+    margin: 5px 0 0 5px;
+  }
+
+  &__count {
+    border: 1px solid #000;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 15px;
+    position: absolute;
+    right: 15px;
+    top: -5px;
+  }
+}

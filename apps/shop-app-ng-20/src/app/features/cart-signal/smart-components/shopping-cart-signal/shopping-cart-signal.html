@@ -1,0 +1,18 @@
+<div class="shopping-cart">
+  <h2 class="shopping-cart__title">Shopping Cart with Signals</h2>
+
+  @if (currentCartList()) {
+    <ul class="shopping-cart__list">
+      @for (item of currentCartList(); track item.cart.id) {
+        <app-cart-signal-item
+          class="shopping-cart__item"
+          [cartItem]="item"
+          (remove)="removeItemFromCart($event)"
+        >
+        </app-cart-signal-item>
+      }
+    </ul>
+  }
+
+  <button class="shopping-cart__add" (click)="addItemToCart()" >Add New Item</button>
+</div>
