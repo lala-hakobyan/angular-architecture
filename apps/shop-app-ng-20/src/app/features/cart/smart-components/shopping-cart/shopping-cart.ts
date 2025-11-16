@@ -1,9 +1,9 @@
 import {Component, inject} from '@angular/core';
 import {Color, SavedCartItem, Size} from '../../../../data/cart-model';
 import {CartStore} from '../../../../shared/store/cart-store';
-import {CartItem} from '../../ui-components/cart-item/cart-item';
 import {AsyncPipe} from '@angular/common';
 import {Button} from '../../../../shared/components/ui-components/button/button';
+import {CartItem} from '../../../../shared/components/ui-components/cart-item/cart-item';
 
 @Component({
   selector: 'app-shopping-cart',

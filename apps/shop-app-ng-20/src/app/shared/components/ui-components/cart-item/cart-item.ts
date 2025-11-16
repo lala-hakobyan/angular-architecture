@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {SavedCartItem} from '../../../../data/cart-model';
-import {Button} from '../../../../shared/components/ui-components/button/button';
+import {Button} from '../button/button';
 
 @Component({
   selector: 'app-cart-item',

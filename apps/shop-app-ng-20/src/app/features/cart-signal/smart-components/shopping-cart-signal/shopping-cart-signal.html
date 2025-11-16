@@ -4,12 +4,12 @@
   @if (currentCartList()) {
     <ul class="shopping-cart__list">
       @for (item of currentCartList(); track item.cart.id) {
-        <app-cart-signal-item
+        <app-cart-item
           class="shopping-cart__item"
           [cartItem]="item"
           (remove)="removeItemFromCart($event)"
         >
-        </app-cart-signal-item>
+        </app-cart-item>
       }
     </ul>
   }

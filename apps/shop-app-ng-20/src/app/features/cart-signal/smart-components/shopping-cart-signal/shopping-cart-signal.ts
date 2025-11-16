@@ -1,12 +1,12 @@
 import {Component, inject, Signal} from '@angular/core';
 import {Color, SavedCartItem, Size} from '../../../../data/cart-model';
 import {CartSignalStore} from '../../store/cart-signal-store';
-import {CartSignalItem} from '../../ui-components/cart-signal-item/cart-signal-item';
+import {CartItem} from '../../../../shared/components/ui-components/cart-item/cart-item';
 
 @Component({
   selector: 'app-shopping-cart-signal',
   imports: [
-    CartSignalItem
+    CartItem
   ],
   templateUrl: './shopping-cart-signal.html',
   styleUrl: './shopping-cart-signal.scss'
