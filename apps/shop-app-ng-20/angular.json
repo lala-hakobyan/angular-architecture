@@ -70,6 +70,10 @@
               "buildTarget": "shop-app-ng-20:build:development"
             }
           },
+          "options": {
+            "port": 4200,
+            "host": "local.angular-shop-app.com"
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {

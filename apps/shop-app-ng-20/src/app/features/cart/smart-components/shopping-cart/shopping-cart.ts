@@ -1,9 +1,11 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, OnDestroy} from '@angular/core';
 import {Color, SavedCartItem, Size} from '../../../../data/cart-model';
 import {CartStore} from '../../../../shared/store/cart-store';
 import {AsyncPipe} from '@angular/common';
 import {Button} from '../../../../shared/components/ui-components/button/button';
 import {CartItem} from '../../../../shared/components/ui-components/cart-item/cart-item';
+import {ApiService} from '../../../../shared/services/api-service';
+import {Subject} from 'rxjs';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -15,42 +17,9 @@ import {CartItem} from '../../../../shared/components/ui-components/cart-item/ca
   templateUrl: './shopping-cart.html',
   styleUrl: './shopping-cart.scss'
 })
-export class ShoppingCart {
-  protected savedCartItems: SavedCartItem[] = [
-    {
-      cart: {
-        id: '5323aa36-ed4c-4517-95f5-5c47bec77039',
-        name: 'Wireless Headphones',
-        description: 'Bluetooth over-ear headphones with noise cancellation',
-        inStock: true
-      },
-      quantity: 2,
-      color: Color.black,
-      size: Size.md
-    },
-    {
-      cart: {
-        id: '180702cb-514a-47cd-a7e3-3f4717b555a4',
-        name: 'Graphic T-Shirt',
-        description: 'Cotton t-shirt with printed artwork',
-        inStock: true
-      },
-      quantity: 1,
-      color: Color.blue,
-      size: Size.lg
-    },
-    {
-      cart: {
-        id: '8358391a-662b-401b-8d11-120f468d571b',
-        name: 'Running Shoes',
-        description: 'Lightweight shoes for daily running',
-        inStock: false
-      },
-      quantity: 1,
-      color: Color.Green,
-      size: Size.sm
-    }
-  ];
+export class ShoppingCart implements OnDestroy{
+  private destroy$  = new Subject<void>();
+  private apiService: ApiService = inject(ApiService);
 
   private newCartItem: SavedCartItem = {
     cart: {
@@ -73,7 +42,10 @@ export class ShoppingCart {
   }
 
   showSavedCartItems() {
-    this.cartStore.cartList = this.savedCartItems;
+    this.apiService.getSavedCartsData().subscribe({
+      next: (savedCartItems: SavedCartItem[]) => (this.cartStore.cartList = savedCartItems),
+      error: () => (console.log('Error happened when fetching api data.')),
+    })
   }
 
   addItemToCart() {
@@ -82,6 +54,11 @@ export class ShoppingCart {
 
   removeItemFromCart(itemId: string) {
     this.cartStore.removeItem(itemId);
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
 }

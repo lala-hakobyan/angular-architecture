@@ -12,6 +12,8 @@
         </app-cart-item>
       }
     </ul>
+  } @else {
+    <p>Loading...</p>
   }
 
   <app-button class="shopping-cart__add" (click)="addItemToCart()" label="Add New Item" ></app-button>

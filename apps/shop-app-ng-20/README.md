@@ -4,56 +4,37 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ## Development server
 
-To start a local development server, run:
+- Start a local development server: `npm run start`     
+  Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Run production build:
+  `npm run build`
+- Since SSR is enabled or this app, in order to test production build for different cases, use these instructions:
+  - Test Server Side Rendering (SSR) or hybrid approach (SSR + SSG + csr)   
+    `npm run serve:prod:ssr`
+  - Test Static Side Rendering (SSG):   
+    Install `serve` globally: `npm install -g serve` and use `serve:prod:ssg` command
+  - Test Client Side Rendering (CSR):   
+    Install `serve` globally: `npm install -g serve` and use `serve:prod:csr` command
 
-```bash
-ng serve
-```
+## Debugging
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Below are instructions how to debug this SSR enabled project which will work for all Angular SSR enabled projects, started from Angular 20 version.
 
-## Code scaffolding
+### Webstorm
+**1. Angular CLI Server (Client Side + Server Side Debugging)**  
+When working with native Angular CLI, after opening the root of the project which is `angular-poc/apps/shop-app-ng-20` in our case,
+there will be Angular CLI Server on the top part of your screen which you can use to debug `ng serve`. And hence it will also debug 
+SSR server because `ng serve` handles both.
+![Angular CLI Server (Client Side + Server Side Debugging)](./docs/angular-webstorm-setup.png)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+**2. Client-side Debugging**  
+For only client-side debugging, there is another option which Angular creates for us. As we can see it has Javascript Debug type. 
+Basically we attach a new browser debugging session for your running local url. So for this option you need firstly to run the project with `npm run start`
+and only after that choose Angular Application and click debug icon. It will open a new Chrome debugging window for your running local project and will stop on debugging entry points.
+This option gives as same value as putting breakpoints and debugging in the Chrome browser itself using Chrome dev tools.
+![Angular Client-side Debugging)](./docs/angular-webstorm-browser-setup.png)
+  
+### Cursor
+For Cursor Angular CLI creates default configuration as well. However, the default configuration enables only client-side debugging and in order to leverage full SSR server + client-side debugging,
+use the following configuration:
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

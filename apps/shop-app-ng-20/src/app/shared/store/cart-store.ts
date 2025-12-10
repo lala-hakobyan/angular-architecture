@@ -21,7 +21,7 @@ export class CartStore {
 
   public addItem(item: SavedCartItem) {
     const cartList: SavedCartItem[] = this.cartList ?? [];
-    // Be careful with this, because inner cart is not deep copied in this case
+    // Be careful with this, because inner cart is not deeply copied in this case
     this.cartList = [...cartList, item];
   }
 
