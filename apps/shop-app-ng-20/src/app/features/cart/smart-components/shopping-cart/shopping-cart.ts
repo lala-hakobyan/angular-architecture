@@ -35,7 +35,6 @@ export class ShoppingCart implements OnDestroy{
     quantity: 1,
     color: Color.blue,
     size: Size.sm,
-
   }
 
   protected cartStore = inject(CartStore);
