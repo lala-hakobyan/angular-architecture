@@ -1,15 +1,18 @@
-import {Component, inject, Signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, Signal} from '@angular/core';
 import {Color, SavedCartItem, Size} from '../../../../data/cart-model';
 import {CartSignalStore} from '../../store/cart-signal-store';
 import {CartItem} from '../../../../shared/components/ui-components/cart-item/cart-item';
+import {Button} from '../../../../shared/components/ui-components/button/button';
 
 @Component({
   selector: 'app-shopping-cart-signal',
   imports: [
-    CartItem
+    CartItem,
+    Button
   ],
   templateUrl: './shopping-cart-signal.html',
-  styleUrl: './shopping-cart-signal.scss'
+  styleUrl: './shopping-cart-signal.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShoppingCartSignal {
   protected savedCartItems: SavedCartItem[] = [

@@ -1,4 +1,4 @@
-import {Component, inject, OnDestroy} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, OnDestroy} from '@angular/core';
 import {Color, SavedCartItem, Size} from '../../../../data/cart-model';
 import {CartStore} from '../../../../shared/store/cart-store';
 import {AsyncPipe} from '@angular/common';
@@ -15,7 +15,8 @@ import {Subject} from 'rxjs';
     Button
   ],
   templateUrl: './shopping-cart.html',
-  styleUrl: './shopping-cart.scss'
+  styleUrl: './shopping-cart.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShoppingCart implements OnDestroy{
   private destroy$  = new Subject<void>();

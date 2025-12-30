@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {
   AbstractControl, FormBuilder,
   FormControl,
@@ -10,14 +10,17 @@ import {
 } from '@angular/forms';
 import {AddressField} from '../data/address.model';
 import {Countries, ErrorMessages} from '../data/account.constants';
+import {Button} from '../../../shared/components/ui-components/button/button';
 
 @Component({
   selector: 'app-address-form',
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Button
   ],
   templateUrl: './address-form.html',
-  styleUrl: './address-form.scss'
+  styleUrl: './address-form.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AddressForm {
   private formBuilder= inject(FormBuilder);

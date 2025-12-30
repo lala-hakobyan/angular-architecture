@@ -2,7 +2,7 @@
   <h3 class="address-form__title">Add a New Address: Template Driven Forms</h3>
   <form #addressForm="ngForm" (ngSubmit)="submitForm()">
     <div class="address-form__group">
-      <label class="address-form__label" for="country">Country {{ country.value }}{{ country.invalid }}</label>
+      <label class="address-form__label" for="country">Country</label>
       <select class="address-form__control"
               [class.address-form__control--error]="country.invalid && country.touched"
               id="country"
@@ -69,7 +69,7 @@
     </div>
 
     <div class="address-form__group">
-      <button type="submit" class="address-form__button" [disabled]="addressForm.invalid">Add Address</button>
+      <app-button [type]="'submit'" class="address-form__button"  [disabled]="addressForm.invalid" label="Add Address" ></app-button>
     </div>
   </form>
 </div>

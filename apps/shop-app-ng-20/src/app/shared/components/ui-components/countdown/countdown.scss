@@ -1,0 +1,34 @@
+.countdown-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 30px;
+}
+
+.digit {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fbbf24; /* Amber-400 */
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.label {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #94a3b8; /* Slate-400 */
+  margin-top: 2px;
+}
+
+.separator {
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 8px; /* Align with digits */
+}

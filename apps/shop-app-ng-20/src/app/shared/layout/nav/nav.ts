@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {RouterLink, RouterLinkActive} from "@angular/router";
 
 @Component({
@@ -8,7 +8,8 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
         RouterLinkActive
     ],
   templateUrl: './nav.html',
-  styleUrl: './nav.scss'
+  styleUrl: './nav.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Nav {
 

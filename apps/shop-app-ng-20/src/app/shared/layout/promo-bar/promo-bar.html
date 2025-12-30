@@ -1,0 +1,17 @@
+@if (isVisible()) {
+  <div class="promo-container">
+
+    <div class="content">
+      <div class="offer-details">
+        <span class="badge">SALE</span>
+        <span class="message">
+              Use code <strong class="code">HELLO2026</strong> for 20% Off
+            </span>
+      </div>
+
+      <app-countdown [targetDateStr]="promoBarDueDate"></app-countdown>
+    </div>
+
+    <button class="close-btn" (click)="close()">✕</button>
+  </div>
+}

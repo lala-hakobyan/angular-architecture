@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {ShoppingCart} from './smart-components/shopping-cart/shopping-cart';
 
 @Component({
@@ -7,7 +7,8 @@ import {ShoppingCart} from './smart-components/shopping-cart/shopping-cart';
     ShoppingCart,
   ],
   templateUrl: './cart.html',
-  styleUrl: './cart.scss'
+  styleUrl: './cart.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Cart {
 

@@ -1,5 +1,5 @@
 .cart-item {
-  background-color: rgba(43, 124, 211, 0.08);
+  background-color: rgba(251, 191, 36, 0.08);
   border: 1px solid #E0E0E0;
   border-radius: 0.8rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(0, 0, 0, 0.08);
@@ -8,7 +8,7 @@
   margin-bottom: 2rem;
 
   &:hover, &:focus, &:active {
-    background-color:  rgba(43, 124, 211, 0.15);
+    background-color:  rgba(251, 191, 36, 0.15);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1),
     0 6px 20px rgba(0, 0, 0, 0.15);
   }

@@ -14,15 +14,18 @@
   }
 
   &__count {
-    border: 1px solid #000;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(0, 0, 0, 0.08);
+    background-color: #fbbf24;
     border-radius: 50%;
-    width: 15px;
-    height: 15px;
+    width: 25px;
+    height: 25px;
     text-align: center;
     vertical-align: middle;
-    line-height: 15px;
+    line-height: 25px;
     position: absolute;
-    right: 15px;
-    top: -5px;
+    right: 25px;
+    top: -20px;
+    font-weight: 600;
   }
 }

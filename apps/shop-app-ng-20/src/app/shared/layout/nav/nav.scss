@@ -14,8 +14,11 @@
     font-weight: 600;
     color: #555555;
 
-    &:hover, &:active, &:focus, &--active {
+    &:active, &--active {
       color: #2B7CD3;
+    }
+    &:hover, &:focus {
+      color: #fbbf24;
     }
   }
 }

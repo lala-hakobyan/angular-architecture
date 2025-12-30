@@ -7,7 +7,6 @@ import {AbstractControl, NG_VALIDATORS, ValidationErrors, Validator} from '@angu
 })
 export class DropdownValidator implements  Validator {
   validate(control: AbstractControl): ValidationErrors | null {
-    console.log('Inside validator', control.value);
     if(control.value === -1) {
       return {
         errors:

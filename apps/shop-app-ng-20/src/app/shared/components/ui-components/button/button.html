@@ -1,6 +1,7 @@
-<button type="button"
+<button [attr.type]="type"
         class="button"
-        [ngClass]="['button', 'button--size-' + buttonSize, 'button--' + buttonStyle]"
+        [class.button--disabled]="disabled"
+        [disabled]="disabled"
 >
   {{label}}
 </button>

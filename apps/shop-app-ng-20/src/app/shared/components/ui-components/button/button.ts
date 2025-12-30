@@ -1,14 +1,11 @@
-import {Component, Input} from '@angular/core';
-import {ButtonSize, ButtonStyle} from '../../../../data/button-model';
-import {NgClass} from '@angular/common';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {ButtonSize, ButtonStyle, ButtonType} from '../../../../data/button-model';
 
 @Component({
   selector: 'app-button',
-  imports: [
-    NgClass
-  ],
   templateUrl: './button.html',
-  styleUrl: './button.scss'
+  styleUrl: './button.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Button {
   @Input() buttonStyle: ButtonStyle = 'primary';
@@ -16,4 +13,8 @@ export class Button {
   @Input() label: string = '';
 
   @Input() buttonSize: ButtonSize = 'md';
+
+  @Input() type: ButtonType = 'button';
+
+  @Input() disabled: boolean | null = null;
 }

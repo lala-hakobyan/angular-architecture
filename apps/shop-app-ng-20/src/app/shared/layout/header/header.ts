@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {CartBasket} from "../../components/smart-components/cart-basket/cart-basket";
 import {Nav} from '../nav/nav';
 
@@ -9,7 +9,8 @@ import {Nav} from '../nav/nav';
     Nav
   ],
   templateUrl: './header.html',
-  styleUrl: './header.scss'
+  styleUrl: './header.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Header {
 
