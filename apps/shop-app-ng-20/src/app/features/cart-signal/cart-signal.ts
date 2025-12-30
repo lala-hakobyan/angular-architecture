@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ShoppingCartSignal } from './smart-components/shopping-cart-signal/shopping-cart-signal';
-import {CartSignalBasket} from '@cart/-signal/smart-components/cart-signal-basket/cart-signal-basket';
+import { CartSignalBasket } from '@cart/-signal/smart-components/cart-signal-basket/cart-signal-basket';
 
 
 @Component({

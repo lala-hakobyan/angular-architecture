@@ -3,7 +3,7 @@
 
   @if (currentCartList()) {
     <ul class="shopping-cart__list">
-      @for (item of currentCartList(); track item.cart.id) {
+      @for (item of currentCartList(); track item.product.id) {
         <app-cart-item
           class="shopping-cart__item"
           [cartItem]="item"

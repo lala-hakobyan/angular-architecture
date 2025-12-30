@@ -1,16 +1,19 @@
 @if (cartItem) {
   <li class="cart-item">
-    <h3>{{cartItem.cart.name}}</h3>
-    <p>{{cartItem.cart.description}}</p>
+    <h3>{{cartItem.product.name}}</h3>
+    <p>{{cartItem.product.description}}</p>
     <p>
-      <span>Quantity: </span><span>{{cartItem.quantity}}</span>
+      <strong>Quantity: </strong><span>{{cartItem.quantity}}</span>
     </p>
     <p>
-      <span>Color: </span><span>{{cartItem.color}}</span>
+      <strong>Color: </strong><span>{{cartItem.color}}</span>
+    </p>
+    <p>
+      <strong>Price: </strong><span>{{calculateTotalPrice() | currency:'USD'}}</span>
     </p>
     <app-button class="cart-item__remove"
                 buttonSize="xs"
-                label="Remove Item"
+                label="✖ &nbsp; Remove Item"
                 (click)="removeItem()"
     >
     </app-button>

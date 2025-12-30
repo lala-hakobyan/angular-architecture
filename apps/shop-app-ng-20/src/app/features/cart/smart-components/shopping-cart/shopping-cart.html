@@ -3,7 +3,7 @@
 
   @if (currentCartList$ | async; as currentCartList) {
     <ul class="shopping-cart__list">
-      @for (item of currentCartList; track item.cart.id) {
+      @for (item of currentCartList; track item.id) {
         <app-cart-item
           class="shopping-cart__item"
           [cartItem]="item"
@@ -12,6 +12,8 @@
         </app-cart-item>
       }
     </ul>
+
+    <p><strong>Total Price: </strong>{{calculateTotalPrice(currentCartList) | currency:'USD' }}</p>
   } @else {
     <p>Loading...</p>
   }

@@ -1,8 +1,9 @@
-export interface CartItem {
+export interface Product {
   id: string;
   name: string;
   description: string;
   inStock: boolean;
+  price: number;
 }
 
 export enum Color {
@@ -19,8 +20,9 @@ export enum Size {
   lg = 'lg'
 }
 
-export interface SavedCartItem {
-  cart: CartItem;
+export interface CartItemData {
+  id: string;
+  product: Product;
   quantity: number;
   color: Color;
   size: Size;

@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, inject, OnDestroy} from '@angular/core';
-import {Color, SavedCartItem, Size} from '../../../../data/cart-model';
+import {Color, CartItemData, Size} from '../../../../data/cart-model';
 import {CartStore} from '../../../../shared/store/cart-store';
-import {AsyncPipe} from '@angular/common';
+import {AsyncPipe, CurrencyPipe} from '@angular/common';
 import {Button} from '../../../../shared/components/ui-components/button/button';
 import {CartItem} from '../../../../shared/components/ui-components/cart-item/cart-item';
 import {ApiService} from '../../../../shared/services/api-service';
@@ -12,7 +12,8 @@ import {Subject} from 'rxjs';
   imports: [
     CartItem,
     AsyncPipe,
-    Button
+    Button,
+    CurrencyPipe
   ],
   templateUrl: './shopping-cart.html',
   styleUrl: './shopping-cart.scss',
@@ -22,16 +23,19 @@ export class ShoppingCart implements OnDestroy{
   private destroy$  = new Subject<void>();
   private apiService: ApiService = inject(ApiService);
 
-  private newCartItem: SavedCartItem = {
-    cart: {
+  private newCartItem: CartItemData = {
+    id: '3758e0c9-d758-411e-89a2-1a50315eaf8e',
+    product: {
       id: '8b7e3f24-c2df-4d18-9e6a-63c9e7b3f1af',
       name: 'Smartwatch Pro',
       description: 'Water-resistant smartwatch with heart-rate monitor and GPS',
-      inStock: true
+      inStock: true,
+      price: 200
     },
     quantity: 1,
     color: Color.blue,
-    size: Size.sm
+    size: Size.sm,
+
   }
 
   protected cartStore = inject(CartStore);
@@ -39,12 +43,12 @@ export class ShoppingCart implements OnDestroy{
   protected currentCartList$ = this.cartStore.cartList$;
 
   constructor() {
-    this.showSavedCartItems();
+    this.showCartItems();
   }
 
-  showSavedCartItems() {
+  showCartItems() {
     this.apiService.getSavedCartsData().subscribe({
-      next: (savedCartItems: SavedCartItem[]) => (this.cartStore.cartList = savedCartItems),
+      next: (cartItems: CartItemData[]) => (this.cartStore.cartList = cartItems),
       error: () => (console.log('Error happened when fetching api data.')),
     })
   }
@@ -55,6 +59,10 @@ export class ShoppingCart implements OnDestroy{
 
   removeItemFromCart(itemId: string) {
     this.cartStore.removeItem(itemId);
+  }
+
+  calculateTotalPrice(cartList: CartItemData[]): number {
+    return cartList.reduce((total: number, curItem: CartItemData) => total + curItem.product.price * curItem.quantity, 0);
   }
 
   ngOnDestroy() {

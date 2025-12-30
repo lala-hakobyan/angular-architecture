@@ -1,7 +1,7 @@
 import {inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {SavedCartItem} from '../../data/cart-model';
+import {CartItemData} from '../../data/cart-model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class ApiService {
 
   constructor() { }
 
-  public getSavedCartsData(): Observable<SavedCartItem[]> {
-    return this.httpClient.get('http://localhost:3020/api/cart/saved-items') as Observable<SavedCartItem[]>;
+  public getSavedCartsData(): Observable<CartItemData[]> {
+    return this.httpClient.get('http://localhost:3020/api/cart/items') as Observable<CartItemData[]>;
   }
 }

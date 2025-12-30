@@ -1,32 +1,38 @@
 [
   {
-    "cart": {
+    "id": "4bc58422-4343-4f83-86cc-52adbbe60886",
+    "product": {
       "id": "5323aa36-ed4c-4517-95f5-5c47bec77039",
       "name": "Wireless Headphones",
       "description": "Bluetooth over-ear headphones with noise cancellation",
-      "inStock": true
+      "inStock": true,
+      "price": 150
     },
     "quantity": 2,
     "color": "Black",
     "size": "md"
   },
   {
-    "cart": {
+    "id": "3758e0c9-d758-411e-89a2-1a50315eaf8e",
+    "product": {
       "id": "180702cb-514a-47cd-a7e3-3f4717b555a4",
       "name": "Graphic T-Shirt",
       "description": "Cotton t-shirt with printed artwork",
-      "inStock": true
+      "inStock": true,
+      "price": 20
     },
     "quantity": 1,
     "color": "Blue",
     "size": "lg"
   },
   {
-    "cart": {
+    "id": "6d9f353b-5b86-40fd-a9b8-154b6bd1bc22",
+    "product": {
       "id": "8358391a-662b-401b-8d11-120f468d571b",
       "name": "Running Shoes",
       "description": "Lightweight shoes for daily running",
-      "inStock": false
+      "inStock": false,
+      "price": 40
     },
     "quantity": 1,
     "color": "Green",

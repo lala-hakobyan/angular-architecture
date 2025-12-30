@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, inject, Signal} from '@angular/core';
-import {Color, SavedCartItem, Size} from '../../../../data/cart-model';
+import {Color, CartItemData, Size} from '../../../../data/cart-model';
 import {CartSignalStore} from '../../store/cart-signal-store';
 import {CartItem} from '../../../../shared/components/ui-components/cart-item/cart-item';
 import {Button} from '../../../../shared/components/ui-components/button/button';
@@ -15,35 +15,41 @@ import {Button} from '../../../../shared/components/ui-components/button/button'
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShoppingCartSignal {
-  protected savedCartItems: SavedCartItem[] = [
+  protected cartItems: CartItemData[] = [
     {
-      cart: {
+      id: '4bc58422-4343-4f83-86cc-52adbbe60886',
+      product: {
         id: '5323aa36-ed4c-4517-95f5-5c47bec77039',
         name: 'Wireless Headphones',
         description: 'Bluetooth over-ear headphones with noise cancellation',
-        inStock: true
+        inStock: true,
+        price: 150
       },
       quantity: 2,
       color: Color.black,
       size: Size.md
     },
     {
-      cart: {
+      id: '3758e0c9-d758-411e-89a2-1a50315eaf8e',
+      product: {
         id: '180702cb-514a-47cd-a7e3-3f4717b555a4',
         name: 'Graphic T-Shirt',
         description: 'Cotton t-shirt with printed artwork',
-        inStock: true
+        inStock: true,
+        price: 20
       },
       quantity: 1,
       color: Color.blue,
       size: Size.lg
     },
     {
-      cart: {
+      id: '6d9f353b-5b86-40fd-a9b8-154b6bd1bc22',
+      product: {
         id: '8358391a-662b-401b-8d11-120f468d571b',
         name: 'Running Shoes',
         description: 'Lightweight shoes for daily running',
-        inStock: false
+        inStock: false,
+        price: 40
       },
       quantity: 1,
       color: Color.Green,
@@ -51,12 +57,14 @@ export class ShoppingCartSignal {
     }
   ];
 
-  private newCartItem: SavedCartItem = {
-    cart: {
+  private newCartItem: CartItemData = {
+    id: '3758e0c9-d758-411e-89a2-1a50315eaf8e',
+    product: {
       id: '8b7e3f24-c2df-4d18-9e6a-63c9e7b3f1af',
       name: 'Smartwatch Pro',
       description: 'Water-resistant smartwatch with heart-rate monitor and GPS',
-      inStock: true
+      inStock: true,
+      price: 200
     },
     quantity: 1,
     color: Color.blue,
@@ -65,14 +73,14 @@ export class ShoppingCartSignal {
 
   protected cartStore = inject(CartSignalStore);
 
-  protected currentCartList: Signal<SavedCartItem[] | null> = this.cartStore.cartList;
+  protected currentCartList: Signal<CartItemData[] | null> = this.cartStore.cartList;
 
   constructor() {
-    this.showSavedCartItems();
+    this.showCartItems();
   }
 
-  showSavedCartItems() {
-    this.cartStore.cartList = this.savedCartItems;
+  showCartItems() {
+    this.cartStore.cartList = this.cartItems;
   }
 
   addItemToCart() {

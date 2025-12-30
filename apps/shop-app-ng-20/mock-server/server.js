@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 let express = require('express');
 // eslint-disable-next-line @typescript-eslint/no-require-imports
-let savedCartItems = require('./database/saved-cart-items.json');
+let cartItems = require('./database/cart-items.json');
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const cors = require('cors');
 
@@ -18,8 +18,8 @@ app.use(cors({
 
 app.use(express.json());
 
-app.get('/api/cart/saved-items', (req, res) => {
-  setTimeout(() => res.json(savedCartItems), 5000);
+app.get('/api/cart/items', (req, res) => {
+  setTimeout(() => res.json(cartItems), 5000);
 });
 
 app.listen(port, () => {

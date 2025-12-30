@@ -1,28 +1,28 @@
 import {computed, Injectable, Signal, signal, WritableSignal} from '@angular/core';
-import {SavedCartItem} from '../../../data/cart-model';
+import {CartItemData} from '../../../data/cart-model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartSignalStore {
-  private cartListProp: WritableSignal<SavedCartItem[] | null> = signal<SavedCartItem[] | null>(null);
+  private cartListProp: WritableSignal<CartItemData[] | null> = signal<CartItemData[] | null>(null);
 
-  public get cartList(): Signal<SavedCartItem[] | null> {
+  public get cartList(): Signal<CartItemData[] | null> {
     return this.cartListProp.asReadonly();
   }
 
-  public set cartList(value: SavedCartItem[] | null) {
+  public set cartList(value: CartItemData[] | null) {
     this.cartListProp.set(value);
   }
 
   public totalCount = computed(() => this.cartList()?.reduce((sum, item) => sum + item.quantity, 0));
 
-  public addItem(item: SavedCartItem) {
+  public addItem(item: CartItemData) {
     this.cartList = [...this.cartList() ?? [], item];
   }
 
   public removeItem(itemId: string) {
-    const newList: SavedCartItem[] | undefined = this.cartList()?.filter(item => item.cart.id !== itemId);
+    const newList: CartItemData[] | undefined = this.cartList()?.filter(item => item.product.id !== itemId);
     this.cartList = newList ? newList : null;
   }
 }

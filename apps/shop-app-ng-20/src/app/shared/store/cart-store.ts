@@ -1,33 +1,32 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, map} from 'rxjs';
-import {SavedCartItem} from '../../data/cart-model';
+import {CartItemData} from '../../data/cart-model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartStore {
-
-  private cartListProp = new BehaviorSubject<SavedCartItem[] | null>(null);
+  private cartListProp = new BehaviorSubject<CartItemData[] | null>(null);
 
   cartList$ = this.cartListProp.asObservable();
 
-  public get cartList(): SavedCartItem[] | null {
+  public get cartList(): CartItemData[] | null {
     return this.cartListProp.value;
   }
 
-  public set cartList(value: SavedCartItem[] | null) {
+  public set cartList(value: CartItemData[] | null) {
     this.cartListProp.next(value);
   }
 
-  public addItem(item: SavedCartItem) {
-    const cartList: SavedCartItem[] = this.cartList ?? [];
+  public addItem(item: CartItemData) {
+    const cartList: CartItemData[] = this.cartList ?? [];
     // Be careful with this, because inner cart is not deeply copied in this case
     this.cartList = [...cartList, item];
   }
 
   public removeItem(itemId: string) {
-    const cartList: SavedCartItem[] = this.cartList ?? [];
-    this.cartList = cartList.filter(item => item.cart.id !== itemId);
+    const cartList: CartItemData[] = this.cartList ?? [];
+    this.cartList = cartList.filter(item => item.id !== itemId);
   }
 
   public totalCount$ = this.cartList$.pipe(
