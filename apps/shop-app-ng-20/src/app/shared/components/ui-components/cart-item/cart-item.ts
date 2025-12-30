@@ -19,7 +19,7 @@ export class CartItem {
   @Output() remove = new EventEmitter<string>();
 
   removeItem() {
-    this.remove.emit(this.cartItem.product.id);
+    this.remove.emit(this.cartItem.id);
   }
 
   calculateTotalPrice() {
