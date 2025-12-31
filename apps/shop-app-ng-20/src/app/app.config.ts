@@ -9,10 +9,11 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(
       withHttpTransferCacheOptions({
         includePostRequests: true
-      }) // <--- THIS IS CRITICAL
+      }),
+      withEventReplay()
     ),
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
-    provideRouter(routes), provideClientHydration(withEventReplay())
+    provideRouter(routes)
   ]
 };
