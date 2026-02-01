@@ -2,12 +2,14 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@
 import {CartItemData} from '../../../../data/cart-model';
 import {Button} from '../button/button';
 import {CurrencyPipe} from '@angular/common';
+import {CartDetails} from '../cart-details/cart-details';
 
 @Component({
   selector: 'app-cart-item',
   imports: [
     Button,
-    CurrencyPipe
+    CurrencyPipe,
+    CartDetails
   ],
   templateUrl: './cart-item.html',
   styleUrl: './cart-item.scss',

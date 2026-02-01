@@ -5,6 +5,7 @@
       "id": "5323aa36-ed4c-4517-95f5-5c47bec77039",
       "name": "Wireless Headphones",
       "description": "Bluetooth over-ear headphones with noise cancellation",
+      "details": "Enjoy rich, immersive sound with these Bluetooth over-ear headphones built for everyday listening. Active noise cancellation helps reduce background distractions so you can focus on music, calls, or podcasts. The cushioned ear cups and adjustable fit are designed for comfortable long sessions, whether you’re working or traveling. Easy wireless pairing makes them a simple upgrade for your phone, laptop, or tablet.",
       "inStock": true,
       "price": 150
     },
@@ -18,6 +19,7 @@
       "id": "180702cb-514a-47cd-a7e3-3f4717b555a4",
       "name": "Graphic T-Shirt",
       "description": "Cotton t-shirt with printed artwork",
+      "details": "This soft cotton graphic tee adds an easy pop of style to your everyday outfits. The printed artwork gives it a standout look while still being simple to pair with jeans, shorts, or layered under a jacket. Breathable fabric makes it comfortable for all-day wear, from errands to hanging out. A classic fit keeps it looking good while staying relaxed and casual.",
       "inStock": true,
       "price": 20
     },
@@ -31,6 +33,7 @@
       "id": "8358391a-662b-401b-8d11-120f468d571b",
       "name": "Running Shoes",
       "description": "Lightweight shoes for daily running",
+      "details": "Designed for daily runs, these lightweight shoes help you stay quick and comfortable on the move. A supportive feel and flexible build make them a solid choice for jogging, walking, or gym sessions. The streamlined design keeps them feeling less bulky, especially for longer workouts. Note: This item is currently out of stock, so it may not be available for immediate checkout or shipping.",
       "inStock": false,
       "price": 40
     },

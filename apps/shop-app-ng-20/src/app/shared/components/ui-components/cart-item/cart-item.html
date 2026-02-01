@@ -11,12 +11,21 @@
     <p>
       <strong>Price: </strong><span>{{calculateTotalPrice() | currency:'USD'}}</span>
     </p>
+
+    @defer (hydrate on viewport) {
+      <app-cart-details [details]="cartItem.product.details?? null" />
+    } @placeholder {
+      <div>Loading Details...</div>
+    }
+
     <app-button class="cart-item__remove"
                 buttonSize="xs"
                 label="✖ &nbsp; Remove Item"
                 (click)="removeItem()"
     >
     </app-button>
+
+
   </li>
 }
 

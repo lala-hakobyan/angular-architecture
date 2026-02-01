@@ -46,9 +46,13 @@ export class ShoppingCart implements OnDestroy{
   }
 
   showCartItems() {
-    this.apiService.getSavedCartsData().subscribe({
+    this.apiService.getCartItemsData().subscribe({
       next: (cartItems: CartItemData[]) => (this.cartStore.cartList = cartItems),
       error: () => (console.log('Error happened when fetching api data.')),
+    })
+
+    this.apiService.getCartSavedItemsData().subscribe({
+      error: () => (console.log('Error happened when fetching saved items api data.')),
     })
   }
 

@@ -11,7 +11,11 @@ export class ApiService {
 
   constructor() { }
 
-  public getSavedCartsData(): Observable<CartItemData[]> {
+  public getCartItemsData(): Observable<CartItemData[]> {
     return this.httpClient.get('http://localhost:3020/api/cart/items') as Observable<CartItemData[]>;
+  }
+
+  public getCartSavedItemsData(): Observable<CartItemData[]> {
+    return this.httpClient.get('http://localhost:3020/api/cart/saved-items') as Observable<CartItemData[]>;
   }
 }
