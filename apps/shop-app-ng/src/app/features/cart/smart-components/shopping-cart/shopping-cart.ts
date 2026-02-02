@@ -1,11 +1,13 @@
 import {ChangeDetectionStrategy, Component, inject, OnDestroy} from '@angular/core';
-import {Color, CartItemData, Size} from '../../../../data/cart-model';
+import {CartItemData} from '../../../../data/cart-model';
 import {CartStore} from '../../../../shared/store/cart-store';
 import {AsyncPipe, CurrencyPipe} from '@angular/common';
 import {Button} from '../../../../shared/components/ui-components/button/button';
 import {CartItem} from '../../../../shared/components/ui-components/cart-item/cart-item';
 import {ApiService} from '../../../../shared/services/api-service';
 import {Subject} from 'rxjs';
+import {MockCartItem} from '../../../../mock/cart-item-mock';
+import { HelpersService } from '../../../../shared/utils/helper-service';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -23,22 +25,7 @@ export class ShoppingCart implements OnDestroy{
   private destroy$  = new Subject<void>();
   private apiService: ApiService = inject(ApiService);
 
-  private newCartItem: CartItemData = {
-    id: '3758e0c9-d758-411e-89a2-1a50315eaf8e',
-    product: {
-      id: '8b7e3f24-c2df-4d18-9e6a-63c9e7b3f1af',
-      name: 'Smartwatch Pro',
-      description: 'Water-resistant smartwatch with heart-rate monitor and GPS',
-      inStock: true,
-      price: 200
-    },
-    quantity: 1,
-    color: Color.blue,
-    size: Size.sm,
-  }
-
   protected cartStore = inject(CartStore);
-
   protected currentCartList$ = this.cartStore.cartList$;
 
   constructor() {
@@ -57,7 +44,7 @@ export class ShoppingCart implements OnDestroy{
   }
 
   addItemToCart() {
-    this.cartStore.addItem(this.newCartItem);
+    this.cartStore.addItem({...MockCartItem, id: HelpersService.generateRandomId()});
   }
 
   removeItemFromCart(itemId: string) {

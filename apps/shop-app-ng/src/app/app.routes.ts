@@ -8,7 +8,7 @@ import {provideHttpClient} from '@angular/common/http';
 import {ApiService} from './shared/services/api-service';
 
 export const routes: Routes = [
-  { path: '', component: Shop},
+  { path: '', redirectTo: 'shop', pathMatch: 'full'},
   { path: 'shop', component: Shop},
   { path: 'blog', component: Blog },
   { path: 'cart', component: Cart, providers: [provideHttpClient(), ApiService] },

@@ -1,1 +1,13 @@
-<h2 class="signal-cart-header__title">Blog</h2>
+<section class="blog">
+    <h2 class="signal-cart-header__title">Blog</h2>
+
+    <ul class="blog__list">
+      @for (post of blogPosts; track post.id) {
+        <li class="blog__list-item">
+          <h3 class="blog__list-item-title">{{ post.title }}</h3>
+          <p>{{ post.date }}</p>
+          <p>{{ post.content }}</p>
+        </li>
+      }
+    </ul>
+</section>

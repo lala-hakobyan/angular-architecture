@@ -19,11 +19,11 @@ app.use(cors({
 app.use(express.json());
 
 app.get('/api/cart/items', (req, res) => {
-  setTimeout(() => res.json(cartItems), 1000);
+  setTimeout(() => res.json(cartItems), 3000);
 });
 
 app.get('/api/cart/saved-items', (req, res) => {
-  setTimeout(() => res.json(cartItems), 1000);
+  setTimeout(() => res.json(cartItems), 3000);
 });
 
 
