@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "shop-app-ng-20": {
+    "shop-app-ng": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -70,10 +70,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "shop-app-ng-20:build:production"
+              "buildTarget": "shop-app-ng:build:production"
             },
             "development": {
-              "buildTarget": "shop-app-ng-20:build:development"
+              "buildTarget": "shop-app-ng:build:development"
             }
           },
           "options": {

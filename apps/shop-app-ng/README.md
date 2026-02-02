@@ -22,7 +22,7 @@ Below are instructions how to debug this SSR enabled project which will work for
 
 ### Webstorm
 **1. Angular CLI Server (Client Side + Server Side Debugging)**  
-When working with native Angular CLI, after opening the root of the project which is `angular-poc/apps/shop-app-ng-20` in our case,
+When working with native Angular CLI, after opening the root of the project which is `angular-poc/apps/shop-app-ng` in our case,
 there will be Angular CLI Server on the top part of your screen which you can use to debug `ng serve`. And hence it will also debug 
 SSR server because `ng serve` handles both.
 ![Angular CLI Server (Client Side + Server Side Debugging)](./docs/angular-webstorm-setup.png)

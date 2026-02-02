@@ -1,5 +1,5 @@
 {
-  "name": "shop-app-ng-20",
+  "name": "shop-app-ng",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -9,10 +9,10 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "mock-server": "nodemon mock-server/server.js",
-    "ssr:inspect": "node --inspect-brk dist/shop-app-ng-20/server/server.mjs",
-    "serve:prod:ssr": "ng build && set PORT=4200 && node dist/shop-app-ng-20/server/server.mjs",
-    "serve:prod:ssg": "ng build && serve dist/shop-app-ng-20/browser -s -l 4200",
-    "serve:prod:csr": "ng build && serve dist/shop-app-ng-20/browser/index.csr.html -l 4200"
+    "ssr:inspect": "node --inspect-brk dist/shop-app-ng/server/server.mjs",
+    "serve:prod:ssr": "ng build && set PORT=4200 && node dist/shop-app-ng/server/server.mjs",
+    "serve:prod:ssg": "ng build && serve dist/shop-app-ng/browser -s -l 4200",
+    "serve:prod:csr": "ng build && serve dist/shop-app-ng/browser/index.csr.html -l 4200"
   },
   "prettier": {
     "overrides": [

@@ -12,5 +12,5 @@ import { PromoBar } from './shared/layout/promo-bar/promo-bar';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class App {
-  protected title = 'shop-app-ng-20';
+  protected title = 'shop-app-ng';
 }
