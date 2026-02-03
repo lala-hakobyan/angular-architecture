@@ -5,13 +5,15 @@ import {CartItem} from '../../../../shared/components/ui-components/cart-item/ca
 import {Button} from '../../../../shared/components/ui-components/button/button';
 import { ApiService } from '../../../../shared/services/api-service';
 import { MockCartItem } from '../../../../mock/cart-item-mock';
+import { PageTitle } from "../../../../shared/components/ui-components/page-title/page-title";
 
 @Component({
   selector: 'app-shopping-cart-signal',
   imports: [
     CartItem,
-    Button
-  ],
+    Button,
+    PageTitle
+],
   templateUrl: './shopping-cart-signal.html',
   styleUrl: './shopping-cart-signal.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

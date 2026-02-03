@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { BlogPost } from '../../data/blog-post';
+import { BlogPost } from '../../data/blog-post-model';
+import { PageTitle } from '../../shared/components/ui-components/page-title/page-title';
 
 @Component({
   selector: 'app-blog',
-  imports: [],
+  imports: [PageTitle],
   templateUrl: './blog.html',
   styleUrl: './blog.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

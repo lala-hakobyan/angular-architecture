@@ -35,15 +35,22 @@ export class AddressForm {
     country: new FormControl(-1, this.dropdownSelectionValidator()),
     fullName: new FormControl('', Validators.required),
     address: new FormControl('', Validators.required),
-    phoneNumber: new FormControl('', Validators.required)
+    phoneNumber: new FormControl('')
   })
 
   protected addressForm = this.formBuilder.group({
     country: new FormControl(-1, this.dropdownSelectionValidator()),
     fullName: new FormControl('', Validators.required),
     address: new FormControl('', Validators.required),
-    phoneNumber: new FormControl('', Validators.required)
+    phoneNumber: new FormControl('')
   })
+
+  constructor() {
+    console.info(
+      '%c ℹ️ The Account page is using reactive form. You can use the `useTemplateDrivenForms: false` option in environment.ts files to enable template driven forms for this page.',
+      'font-size: 14px; color: #0d6efd; font-weight: 600; font-family: system-ui, -apple-system, sans-serif;'
+    );
+  }
 
   protected isError(fieldName: AddressField) {
     const control = this.addressForm.get(fieldName);
@@ -51,7 +58,7 @@ export class AddressForm {
   }
 
   protected submitForm() {
-    console.log(this.addressForm.value);
+    console.log('Address form value: ', this.addressForm.value);
   }
 
   private dropdownSelectionValidator(): ValidatorFn {

@@ -1,6 +1,6 @@
 .page-header {
   padding: 1.5rem;
-  
+
   &__nav {
     flex-grow: 1;
     display: none;
@@ -19,6 +19,14 @@
   &__top {
     display: flex;
     align-items: center;
+  }
+
+  &__basket {
+    &-container {
+      display: flex;
+      justify-content: flex-end;
+      width: 188.5px;
+    }
   }
 
   @media screen and (min-width: 768px) {

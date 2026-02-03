@@ -1,5 +1,5 @@
-<div class="shopping-cart">
-  <h2 class="shopping-cart__title">Shopping Cart with Signal Store</h2>
+<section class="shopping-cart">
+  <app-page-title title="Shopping Cart" class="shopping-cart__title"></app-page-title>
 
   @if (currentCartList()) {
     <ul class="shopping-cart__list">
@@ -17,4 +17,4 @@
   }
   
   <app-button class="shopping-cart__add" (click)="addItemToCart()" label="Add New Item" ></app-button>
-</div>
+</section>

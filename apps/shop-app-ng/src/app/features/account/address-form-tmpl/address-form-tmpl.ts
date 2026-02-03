@@ -31,6 +31,13 @@ export class AddressFormTmpl {
 
   protected readonly countryDefaultValue = '---Choose Country---';
 
+  constructor() {
+    console.info(
+      '%c ℹ️ The Account page is using template driven forms. You can use the `useTemplateDrivenForms: false` option in environment.ts files to enable a reactive form for this page.',
+      'font-size: 14px; color: #0d6efd; font-weight: 600; font-family: system-ui, -apple-system, sans-serif;'
+    );
+  }
+
   protected submitForm() {
     console.log(this.formModel);
   }

@@ -1,6 +1,14 @@
-<app-address-form>
-</app-address-form>
+<section class="account">
+    <app-page-title title="Account"></app-page-title>
+    
+    @if(isTemplateDrivenForms) {
+        <app-address-form>
+        </app-address-form>
+    } @else {
+        <app-address-form-tmpl></app-address-form-tmpl>
+    }
+</section>  
 
-<hr/>
 
-<app-address-form-tmpl></app-address-form-tmpl>
+
+

@@ -8,6 +8,7 @@ import {ApiService} from '../../../../shared/services/api-service';
 import {Subject} from 'rxjs';
 import {MockCartItem} from '../../../../mock/cart-item-mock';
 import {HelpersService} from '../../../../shared/utils/helper-service';
+import {PageTitle} from '../../../../shared/components/ui-components/page-title/page-title';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -15,7 +16,8 @@ import {HelpersService} from '../../../../shared/utils/helper-service';
     CartItem,
     AsyncPipe,
     Button,
-    CurrencyPipe
+    CurrencyPipe,
+    PageTitle
   ],
   templateUrl: './shopping-cart.html',
   styleUrl: './shopping-cart.scss',

@@ -2,11 +2,13 @@
   <div class="page-header__top">
     <h1 class="page-header__title">SHOP <span class="page-header__title-highlight">& FLY</span></h1>
     <app-nav class="page-header__nav"></app-nav>
-    @if (isSignalStore) {
-      <app-cart-signal-basket class="page-header__basket"></app-cart-signal-basket>
-    } @else {
-      <app-cart-basket class="page-header__basket"></app-cart-basket>
-    }
+    <div class="page-header__basket-container">
+      @if (isSignalStore) {
+        <app-cart-signal-basket class="page-header__basket"></app-cart-signal-basket>
+      } @else {
+        <app-cart-basket class="page-header__basket"></app-cart-basket>
+      }
+    </div>
   </div>
   <app-nav class="page-header__nav--mobile"></app-nav>
 </div>

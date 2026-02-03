@@ -1,10 +1,10 @@
-<div class="address-form">
-  <h3 class="address-form__title">Add a New Address: Template Driven Forms</h3>
+<div class="form margin-auto">
+  <h3 class="form__title">Add a New Address</h3>
   <form #addressForm="ngForm" (ngSubmit)="submitForm()">
-    <div class="address-form__group">
-      <label class="address-form__label" for="country">Country</label>
-      <select class="address-form__control"
-              [class.address-form__control--error]="country.invalid && country.touched"
+    <div class="form__group">
+      <label class="form__label" for="country">Country</label>
+      <select class="form__control"
+              [class.form__control--error]="country.invalid && country.touched"
               id="country"
               name="country"
               #country="ngModel"
@@ -19,58 +19,61 @@
         }
       </select>
       @if(country.invalid && country.touched) {
-        <p class="address-form__control-error">{{ errorMessages.required }}</p>
+        <p class="form__control-error">{{ errorMessages.required }}</p>
       }
     </div>
 
-    <div class="address-form__group">
-      <label class="address-form__label" for="fullName">Full Name</label>
-      <input class="address-form__control"
-             [class.address-form__control--error]="fullName.invalid && fullName.touched"
-             id="fullName"
-             name="fullName"
-             #fullName = "ngModel"
-             type="text"
-             required
-             [(ngModel)]="formModel.fullName"/>
+    <div class="form__group">
+      <label class="form__label" for="fullName">Full Name</label>
+      <input class="form__control"
+              [class.form__control--error]="fullName.invalid && fullName.touched"
+              id="fullName"
+              name="fullName"
+              #fullName = "ngModel"
+              type="text"
+              required
+              [(ngModel)]="formModel.fullName"/>
       @if(fullName.invalid && fullName.touched) {
-        <p class="address-form__control-error">{{ errorMessages.required }}</p>
+        <p class="form__control-error">{{ errorMessages.required }}</p>
       }
     </div>
 
-    <div class="address-form__group">
-      <label class="address-form__label" for="phoneNumber">Phone Number</label>
-      <input class="address-form__control"
-             [class.address-form__control--error]="phoneNumber.invalid && phoneNumber.touched"
-             id="phoneNumber"
-             name="phoneNumber"
-             #phoneNumber = "ngModel"
-             type="text"
-             required
-             [(ngModel)]="formModel.phoneNumber" />
+    <div class="form__group">
+      <label class="form__label" for="phoneNumber">Phone Number</label>
+      <input class="form__control"
+              [class.form__control--error]="phoneNumber.invalid && phoneNumber.touched"
+              id="phoneNumber"
+              name="phoneNumber"
+              #phoneNumber = "ngModel"
+              type="text"
+              required
+              [(ngModel)]="formModel.phoneNumber" />
       @if(phoneNumber.invalid && phoneNumber.touched) {
-        <p class="address-form__control-error">{{ errorMessages.required }}</p>
+        <p class="form__control-error">{{ errorMessages.required }}</p>
       }
     </div>
 
-    <div class="address-form__group">
-      <label class="address-form__label" for="address">Address</label>
-      <input class="address-form__control"
-             [class.address-form__control--error]="address.invalid && address.touched"
-             id="address"
-             name="address"
-             #address = "ngModel"
-             type="text"
-             required
-             [(ngModel)]="formModel.address" />
+    <div class="form__group">
+      <label class="form__label" for="address">Address</label>
+      <input class="form__control"
+              [class.form__control--error]="address.invalid && address.touched"
+              id="address"
+              name="address"
+              #address = "ngModel"
+              type="text"
+              required
+              [(ngModel)]="formModel.address" />
       @if(address.invalid && address.touched) {
-        <p class="address-form__control-error">{{ errorMessages.required }}</p>
+        <p class="form__control-error">{{ errorMessages.required }}</p>
       }
     </div>
 
-    <div class="address-form__group">
-      <app-button [type]="'submit'" class="address-form__button"  [disabled]="addressForm.invalid" label="Add Address" ></app-button>
+    <div class="form__group">
+      <app-button [type]="'submit'" class="form__button"  [disabled]="addressForm.invalid" label="Add Address" ></app-button>
     </div>
   </form>
 </div>
+
+
+
 
