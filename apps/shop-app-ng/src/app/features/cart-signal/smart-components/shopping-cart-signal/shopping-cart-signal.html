@@ -1,5 +1,5 @@
 <div class="shopping-cart">
-  <h2 class="shopping-cart__title">Shopping Cart with Signals</h2>
+  <h2 class="shopping-cart__title">Shopping Cart with Signal Store</h2>
 
   @if (currentCartList()) {
     <ul class="shopping-cart__list">
@@ -12,7 +12,9 @@
         </app-cart-item>
       }
     </ul>
+  } @else {
+    <p>Loading...</p>
   }
-
+  
   <app-button class="shopping-cart__add" (click)="addItemToCart()" label="Add New Item" ></app-button>
 </div>

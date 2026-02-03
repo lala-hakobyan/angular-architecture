@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import {CartStore} from '../../../shared/store/cart-store';
+import {CartStore} from './cart-store';
 
 
 describe('CartStore', () => {

@@ -1,5 +1,5 @@
 import {computed, Injectable, Signal, signal, WritableSignal} from '@angular/core';
-import {CartItemData} from '../../../data/cart-model';
+import {CartItemData} from '../../data/cart-model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +22,7 @@ export class CartSignalStore {
   }
 
   public removeItem(itemId: string) {
-    const newList: CartItemData[] | undefined = this.cartList()?.filter(item => item.product.id !== itemId);
+    const newList: CartItemData[] | undefined = this.cartList()?.filter(item => item.id !== itemId);
     this.cartList = newList ? newList : null;
   }
 }

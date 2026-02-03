@@ -7,7 +7,7 @@ import {CartItem} from '../../../../shared/components/ui-components/cart-item/ca
 import {ApiService} from '../../../../shared/services/api-service';
 import {Subject} from 'rxjs';
 import {MockCartItem} from '../../../../mock/cart-item-mock';
-import { HelpersService } from '../../../../shared/utils/helper-service';
+import {HelpersService} from '../../../../shared/utils/helper-service';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -21,7 +21,7 @@ import { HelpersService } from '../../../../shared/utils/helper-service';
   styleUrl: './shopping-cart.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ShoppingCart implements OnDestroy{
+export class ShoppingCart implements OnDestroy {
   private destroy$  = new Subject<void>();
   private apiService: ApiService = inject(ApiService);
 
