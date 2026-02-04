@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Debug: Angular SSR" type="CompoundRunConfigurationType">
+    <toRun name="Angular Application" type="JavascriptDebugType" />
+    <toRun name="Angular CLI Server" type="js.build_tools.npm" />
+    <method v="2" />
+  </configuration>
+</component>

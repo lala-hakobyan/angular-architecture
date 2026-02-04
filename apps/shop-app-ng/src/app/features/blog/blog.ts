@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { BlogPost } from '../../data/blog-post-model';
+import { BlogPost } from '../../data/blog-post-model'; 
 import { PageTitle } from '../../shared/components/ui-components/page-title/page-title';
+import { OrdinalDatePipe } from './utils/ordinal-date-pipe';
 
 @Component({
   selector: 'app-blog',
-  imports: [PageTitle],
+  imports: [PageTitle, OrdinalDatePipe],
   templateUrl: './blog.html',
   styleUrl: './blog.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

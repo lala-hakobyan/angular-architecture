@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 import { AddressForm } from './address-form';
 
@@ -8,7 +9,8 @@ describe('AddressForm', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AddressForm]
+      imports: [AddressForm],
+      providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 

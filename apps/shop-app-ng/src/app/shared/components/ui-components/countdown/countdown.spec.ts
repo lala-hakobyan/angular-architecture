@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 import { Countdown } from './countdown';
 
@@ -8,7 +9,8 @@ describe('Countdown', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Countdown]
+      imports: [Countdown],
+      providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 

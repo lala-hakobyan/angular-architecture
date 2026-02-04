@@ -5,7 +5,7 @@
       @for (post of blogPosts; track post.id) {
         <li class="blog__list-item">
           <h3 class="blog__list-item-title">{{ post.title }}</h3>
-          <p>{{ post.date }}</p>
+          <p>{{ post.date | ordinalDate }}</p>
           <p>{{ post.content }}</p>
         </li>
       }

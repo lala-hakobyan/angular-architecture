@@ -8,6 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "test:watch": "ng test --watch",
     "mock-server": "nodemon mock-server/server.js",
     "ssr:inspect": "node --inspect-brk dist/shop-app-ng/server/server.mjs",
     "serve:prod:ssr": "ng build && set PORT=4200 && node dist/shop-app-ng/server/server.mjs",

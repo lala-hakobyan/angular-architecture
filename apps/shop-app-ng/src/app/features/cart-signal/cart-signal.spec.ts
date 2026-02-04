@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideZonelessChangeDetection } from '@angular/core';
+import { provideHttpClient } from '@angular/common/http';
 
 import { CartSignal } from './cart-signal';
 
@@ -8,7 +10,11 @@ describe('CartSignal', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CartSignal]
+      imports: [CartSignal],
+      providers: [
+        provideZonelessChangeDetection(),
+        provideHttpClient()
+      ]
     })
     .compileComponents();
 

@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 import { CartBasketUi } from './cart-basket-ui';
 
@@ -8,7 +9,8 @@ describe('CartCount', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CartBasketUi]
+      imports: [CartBasketUi],
+      providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 

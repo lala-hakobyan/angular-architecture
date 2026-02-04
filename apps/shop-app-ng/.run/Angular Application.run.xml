@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Angular Application" type="JavascriptDebugType" uri="http://local.angular-shop-app.com:4200">
+    <method v="2">
+      <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_Wait for Port 4200" />
+    </method>
+  </configuration>
+</component>

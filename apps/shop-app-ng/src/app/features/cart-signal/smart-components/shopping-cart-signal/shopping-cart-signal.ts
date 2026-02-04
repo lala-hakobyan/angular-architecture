@@ -31,11 +31,29 @@ export class ShoppingCartSignal {
   showCartItems() {
     this.apiService.getCartItemsData().subscribe({
       next: (cartItems: CartItemData[]) => (this.cartStore.cartList = cartItems),
-      error: () => (console.log('Error happened when fetching api data.')),
+      error: (error) => {
+        console.error('Error happened when fetching api data:', error);
+        console.error('Error details:', {
+          message: error.message,
+          status: error.status,
+          statusText: error.statusText,
+          url: error.url,
+          error: error.error
+        });
+      },
     })
 
     this.apiService.getCartSavedItemsData().subscribe({
-      error: () => (console.log('Error happened when fetching saved items api data.')),
+      error: (error) => {
+        console.error('Error happened when fetching saved items api data:', error);
+        console.error('Error details:', {
+          message: error.message,
+          status: error.status,
+          statusText: error.statusText,
+          url: error.url,
+          error: error.error
+        });
+      },
     })
   }
 
