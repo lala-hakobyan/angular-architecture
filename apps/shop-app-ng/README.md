@@ -14,24 +14,25 @@ The project is compatible with the following technology versions:
 
 ## Features and Best Practices
 
-While this is not a full production ready application, there are several features and best practices you can explore to adapt in your production ready applications:
-1. Folder structure that promotes long time scalability and maintainability.
-Logic is separated into UI, business logic, data (API) and state management layers (store) which is essential for long time maintainability.
-2. Presentation / container pattern.
-Components are separated into smart and dumb (UI) components under respective folders which allows better isolation and maintainability.
-3. Fully responsive and adapted to mobile breakpoints.
-4. BEM approach for class names.  
-5. Server Side Rendering (SSR) by default. 
-6. Incremental hydration with @defer blocks.
-   - `cart-details` block in `cart-item` component is deferred on viewport during incremental hydration process.
-   To test incremental hydration in local development build, make sure to run it with HMR disabled option: `start:no-hmr`. This is because when hot module replacement is enabled, all defer blocks and their dependencies are loaded eagerly.
-7. Lightweight Custom Signal store vs RxJS BehaviorSubject store
-  - By default RxJS BehaviorSubject store is enabled for Cart page.
-  - Use `useSignalStore: true` option in `environment.ts` to enable signal store for Cart page.
-8. Starter example of Template driven forms and reactive form.
-  - By default reactive form template is enabled for Account page.
-  - Use `useTemplateDrivenForms` option in `environment.ts` to enable template driven forms.  
-9. Local mock Express.js server to emulate API requests and do easy development locally.
+While this is not a full **production-ready** application, there are several features and best practices you can explore to adapt in your **Production-ready** applications:
+
+- **Scalable folder structure:** 
+  Logic is separated into UI, business logic, data (API) and state management layers (store) which is essential for **Long-term** maintainability.
+- **Presentation / container pattern** Components are separated into **smart** and **dumb (UI)** components under respective folders which allows better isolation and maintainability.
+- **Fully responsive and adapted to mobile breakpoints**   
+- **BEM approach for class names**   
+- **Server-side Rendering (SSR) by default**  
+- **Incremental hydration with `@defer` blocks:**  
+  - The `cart-details` block in the `cart-item` component is deferred on viewport during the incremental hydration process.
+  - To test incremental hydration in a local development build, make sure to run it with the HMR disabled option: `start:no-hmr`. This is because when hot module replacement is enabled, all defer blocks and their dependencies are loaded eagerly.
+- **Lightweight custom Signal store vs RxJS BehaviorSubject store:**  
+  - By default, the **RxJS BehaviorSubject** store is enabled for the **Cart** page.
+  - Use the `useSignalStore: true` option in `environment.ts` to enable the signal store for the **Cart** page.
+- **Starter example of Template-driven forms and Reactive forms**  
+  - By default, the reactive form template is enabled for the **Account** page.
+  - Use the `useTemplateDrivenForms` option in `environment.ts` to enable template-driven forms.
+- **Local mock Express.js server:**   
+  This helps to emulate API requests and perform easy development locally.
    
 
 ## Getting Started
@@ -53,7 +54,7 @@ After finishing these steps, you can use the commands provided in the section be
 
 ### Run Project
 
-- **Start a local development server:** `npm run start`     
+- **Start a local development server:** `npm run start`   
   Once the server is running, open your browser and navigate to `http://local.angular-shop-app.com:4200/`. The application will automatically reload whenever you modify any of the source files.
 - **Start a local development server without HMR:** `npm run start:no-hmr` 
 - **Run production build:**
@@ -75,25 +76,27 @@ When creating an Angular project using the `Angular CLI`, it already generates d
 ### Cursor
 For Cursor, the Angular CLI creates default configuration as well. However, the default configuration enables only client-side debugging. To leverage full SSR server + client-side debugging, a custom configuration is available in the `.vscode/launch.json` file. This configuration will help you to automatically enable debugging commands in Cursor once you run this project.
 
-If you want to learn more about the details of these configurations, check 3. IDE Debugging chapter in my [Front-end Debugging Tools Handbook](https://github.com/lala-hakobyan/front-end-debugging-handbook)
+If you want to learn more about the details of these configurations, check **IDE Debugging** chapter in my [Front-end Debugging Tools Handbook](https://github.com/lala-hakobyan/front-end-debugging-handbook)
 
 
 ## Troubleshooting
 
 ### Error: port is already in use
 `Error: listen EADDRINUSE: address already in use :::4200`
-If this happens, you need to find and kill the processes using a specific port (e.g. `4200`). For that, execute these commands in **PowerShell** or **Command Prompt**:
+
+If this happens, you need to find and kill the processes using a specific port (e.g. `4200`). For that, execute these commands in **PowerShell** or **Command Prompt** in **Windows** and in **Terminal** for **macOS / Linux**:
+
 - Find all processes using port `4200`:
-    - **Windows:** `netstat -ano | findstr :4200`
-    - **Mac / Linux:** `lsof -i :4200`
+  - **Windows:** `netstat -ano | findstr :4200`
+  - **macOS / Linux:** `lsof -i :4200`
 - It will return results like these:
-    - **Windows:** `TCP    0.0.0.0:4200     0.0.0.0:0     LISTENING     12345`
-    - **Mac / Linux:** `node    98765   youruser   0u  IPv4  12345678      0t0  TCP *:4200 (LISTEN)`
-- The last number (`12345` or `98765`) is the PID. You need to kill all found PIDs using this command:
-    - **Windows:** `taskkill /PID 12345 /F`
-    - **Mac / Linux:** `kill -9 98765`
+  - **Windows:** `TCP    0.0.0.0:4200     0.0.0.0:0     LISTENING     12345`
+  - **macOS / Linux:** `node    12345   youruser   0u  IPv4  0x854013108bce2194      0t0  TCP *:4200 (LISTEN)`
+- The number `12345` in this example is the PID. You need to kill all found PIDs using this command:
+  - **Windows:** `taskkill /PID 12345 /F`
+  - **macOS / Linux:** `kill -9 12345`
 
 ### Remove Project Cache
 If project performance is not good, it hangs on the browser, or slows down, you can remove the Angular project cache by following these steps:
-1. Remove the Angular metadata folder - `.angular`, and do `npm run start` again, it will generate a new `.angular` folder for you.
-2. If Step 1 is not helpful, you can remove the `node_modules` folder entirely, and do `npm install` again.
+1. Remove the Angular metadata folder (`.angular`), and do `npm run start` again, it will generate a new `.angular` folder for you.
+2. If **Step 1** is not helpful, you can remove the `node_modules` folder entirely, and do `npm install` again.
