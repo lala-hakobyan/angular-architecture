@@ -1,5 +1,5 @@
 # Angular Architecture Starter Projects
-A collection of Angular starter projects designed to reflect best practices in modern Angular development. The projects are intended for experimenting and debugging Angular features, benchmarking performance and creating maintainable, scalable architecture foundations for real production apps.
+A collection of Angular starter projects designed to reflect best practices in modern Angular development. The projects are intended for debugging Angular features, benchmarking performance and creating maintainable, scalable architecture foundations for real production apps.
 
 
 ## Projects 
