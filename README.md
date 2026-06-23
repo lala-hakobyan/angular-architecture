@@ -1,9 +1,9 @@
-# Angular POC Projects
-A collection of Angular POC starter projects designed to reflect best practices in modern Angular development. The projects are intended for experimenting and debugging Angular features, benchmarking performance and creating maintainable, scalable architecture POCs as a foundation for real production apps.
+# Angular Architecture Starter Projects
+A collection of Angular starter projects designed to reflect best practices in modern Angular development. The projects are intended for experimenting and debugging Angular features, benchmarking performance and creating maintainable, scalable architecture foundations for real production apps.
 
 
 ## Projects 
-### [Angular Shop POC Application (`apps/shop-app-ng`)](./apps/shop-app-ng)
+### [Angular Shop Application (`apps/shop-app-ng`)](./apps/shop-app-ng)
   
 This is an Angular SSR project which contains the following features:
 - Incremental hydration with `@defer` blocks.
@@ -11,7 +11,7 @@ This is an Angular SSR project which contains the following features:
 - Signal Store and RxJS BehaviorSubject store.
 - Reactive Forms and Template-driven forms.
 
-> **Note:** The [debugging-handbook-demo-v1](https://github.com/lala-hakobyan/angular-poc/tree/debugging-handbook-demo-v1) branch of this repository is the version used for [Front-end Debugging Tools Handbook](https://github.com/lala-hakobyan/front-end-debugging-handbook) specific Angular features.
+> **Note:** The [debugging-handbook-demo-v1](https://github.com/lala-hakobyan/angular-architecture/tree/debugging-handbook-demo-v1) branch of this repository is the version used for [Front-end Debugging Tools Handbook](https://github.com/lala-hakobyan/front-end-debugging-handbook) specific Angular features.
 The project may contain only slight visual changes compared to screenshots presented in the handbook.
 
 
@@ -34,16 +34,16 @@ This repository features proof-of-concept front-end starter applications that al
 The underlying source code and CSS authored by Lala Hakobyan are licensed under the [MIT License](./LICENSE-CODE) and may be used in personal and commercial projects.
 
 **Official Source**<br>
-For the latest updates, please refer to the official repository: https://github.com/lala-hakobyan/angular-poc
+For the latest updates, please refer to the official repository: https://github.com/lala-hakobyan/angular-architecture
 
 **Attribution Example**<br>
 If you reference this project or use the source code in your own documentation, you can use the following format:
 
-> **Source:** "Shop App POC" by Lala Hakobyan. Copyright © 2026. All rights reserved. Available at: https://github.com/lala-hakobyan/angular-poc
+> **Source:** "Shop Starter App" by Lala Hakobyan. Copyright © 2026. All rights reserved. Available at: https://github.com/lala-hakobyan/angular-architecture
 
 
 ## Feedback and Issues
-- If you found a bug or have feedback, please feel free to reach out via [LinkedIn](https://www.linkedin.com/in/lala-hakobyan) or submit an issue on the [**Issues page**](https://github.com/lala-hakobyan/angular-poc/issues) on GitHub.
+- If you found a bug or have feedback, please feel free to reach out via [LinkedIn](https://www.linkedin.com/in/lala-hakobyan) or submit an issue on the [**Issues page**](https://github.com/lala-hakobyan/angular-architecture/issues) on GitHub.
 - ❌ **Please do not submit Pull Requests** (I am not accepting external contributions at this time).
 
 

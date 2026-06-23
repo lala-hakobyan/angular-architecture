@@ -1,12 +1,12 @@
 # Contributing Guidelines
 
-Thank you for being part of the **Angular POC Projects** community. To keep this a safe, professional and productive space for everyone, please follow these guidelines.
+Thank you for being part of the **Angular Architecture Starter Projects** community. To keep this a safe, professional and productive space for everyone, please follow these guidelines.
 
 ## Community and Contributions
 To help keep our discussions organized, please use the following guide for contributing:
 
-- Report typos, bugs or broken links via the **[Issues page on GitHub](https://github.com/lala-hakobyan/angular-poc/issues)**.
-- Join the conversation or start a new one in the **[Discussions page](https://github.com/lala-hakobyan/angular-poc/discussions)**:
+- Report typos, bugs or broken links via the **[Issues page on GitHub](https://github.com/lala-hakobyan/angular-architecture/issues)**.
+- Join the conversation or start a new one in the **[Discussions page](https://github.com/lala-hakobyan/angular-architecture/discussions)**:
     - **Feedback and Suggestions**: Provide general feedback, suggest new topics and share ideas to help improve the project and keep it up to date.
     - **Q&A**: Ask technical questions about the project features and debugging experiments. Everyone is welcome to participate and answer questions, but please keep discussions focused on these areas. If a question is specifically for the author, please mention `@lala-hakobyan` directly.
     - **Announcements**: Follow official announcements and updates from the author regarding the project features and debugging experiments.

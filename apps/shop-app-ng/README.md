@@ -1,5 +1,5 @@
-# Angular Shop POC Application
-Angular Shop POC application for experimenting with **Angular SSR**, **incremental hydration** and **signals**. 
+# Angular Shop Starter Application
+Angular Shop starter application for experimenting with **Angular SSR**, **incremental hydration** and **signals**. 
 It also allows you to explore older features like a store based on **RxJS BehaviorSubject**, **template-driven forms** and **reactive forms**.
 
 
