@@ -14,8 +14,14 @@
     </ul>
 
     <p><strong>Total Price: </strong>{{calculateTotalPrice(currentCartList) | currency:'USD' }}</p>
-  } @else {
-    <p>Loading...</p>
+  }
+
+  @if(isLoading$ | async) {
+      <p>Loading...</p>
+  }
+
+  @if(isError$ | async) {
+    <p class="error-clr">{{errorMessage}}</p>
   }
 
   <app-button class="shopping-cart__add" (click)="addItemToCart()" label="Add New Item" ></app-button>
